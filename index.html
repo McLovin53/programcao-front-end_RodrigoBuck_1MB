@@ -1,175 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog de Tecnologia & Estilo de Vida</title>
-    <style>
-        /* Estilos Gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <title>Meu Blog no GitHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="logo">DevBlog</h1>
+            <nav class="nav-menu">
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Projetos</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
+    <div class="container">
+        
+        <main class="posts-container">
+            
+            <article class="card-post">
+                <img src="https://picsum.photos/800/400?random=1" alt="Imagem do Post 1" class="post-img">
+                <div class="post-details">
+                    <span class="post-tag">Tecnologia</span>
+                    <h2>Como hospedar seu site no GitHub Pages</h2>
+                    <p class="post-date">Publicado em 15 de Maio</p>
+                    <p class="post-excerpt">
+                        Aprenda o passo a passo para colocar seu projeto web no ar utilizando o serviço gratuito de hospedagem do GitHub.
+                    </p>
+                    <a href="#" class="read-more">Ler artigo completo &rarr;</a>
+                </div>
+            </article>
 
-        a:hover {
-            text-decoration: underline;
-        }
+            <article class="card-post">
+                <img src="https://picsum.photos/800/400?random=2" alt="Imagem do Post 2" class="post-img">
+                <div class="post-details">
+                    <span class="post-tag">Desenvolvimento</span>
+                    <h2>Dicas para organizar seu CSS</h2>
+                    <p class="post-date">Publicado em 10 de Maio</p>
+                    <p class="post-excerpt">
+                        Manter o estilo da sua aplicação limpo e reutilizável é fundamental para escalar projetos de front-end.
+                    </p>
+                    <a href="#" class="read-more">Ler artigo completo &rarr;</a>
+                </div>
+            </article>
 
-        /* Cabeçalho / Navegação */
-        header {
-            background-color: #1a1a2e;
-            color: #fff;
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        </main>
 
-        .header-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        <aside class="sidebar">
+            
+            <div class="widget author-widget">
+                <img src="https://picsum.photos/150/150?random=3" alt="Foto do Autor" class="author-img">
+                <h3>Sobre o Autor</h3>
+                <p>Olá! Desenvolvedor entusiasta de tecnologia, compartilhando aprendizados e projetos no GitHub.</p>
+            </div>
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e94560;
-        }
+            <div class="widget categories-widget">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">GitHub & Git</a></li>
+                    <li><a href="#">Carreira Tech</a></li>
+                </ul>
+            </div>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+        </aside>
 
-        nav a {
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    </div>
 
-        nav a:hover {
-            color: #e94560;
-            text-decoration: none;
-        }
+    <footer class="main-footer">
+        <p>&copy; 2026 DevBlog. Hospedado com GitHub Pages.</p>
+    </footer>
 
-        /* Layout Principal */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        /* Feed de Posts */
-        .post {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-
-        .post:hover {
-            transform: translateY(-3px);
-        }
-
-        .post img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .post-content {
-            padding: 20px;
-        }
-
-        .post-meta {
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 10px;
-        }
-
-        .post-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #1a1a2e;
-        }
-
-        .post-excerpt {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .btn-read-more {
-            display: inline-block;
-            background-color: #0066cc;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .btn-read-more:hover {
-            background-color: #0052a3;
-            text-decoration: none;
-        }
-
-        /* Barra Lateral (Sidebar) */
-        aside {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .widget {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .widget-title {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e94560;
-            padding-bottom: 5px;
-            color: #1a1a2e;
-        }
-
-        .author-info {
-            text-align: center;
-        }
-
-        .author-info img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            object-fit: cover;
-        }
-
-        .categories-list {
-            list-style: none;
-        }
-
-        .categories-
+</body>
+</html>
